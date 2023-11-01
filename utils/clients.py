@@ -4,14 +4,14 @@ from beanie import Document, init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from config import settings
-from models.test import Test
+from models.test import TestRoot, TestSubLevel1, TestSubLevel2, TestSubLevel3
 
 
 def database_collection_mappers() -> List[Dict[str, Union[str, List[Document]]]]:
     return [
         {
             "database": "realestate",
-            "document_models": [Test],
+            "document_models": [TestRoot, TestSubLevel1, TestSubLevel2, TestSubLevel3],
         },
     ]
 
